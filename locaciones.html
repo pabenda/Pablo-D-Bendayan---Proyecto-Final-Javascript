@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMULADOR DE COSTO DE LOCACION</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./images/favicon.png">
+</head>
+<body>
+    <header>
+        <!--Logo con link-->
+        <a href="index.html"><img class="logo" src="images/isologo.png" alt="Logo"></a>
+    </header>
+    <main>
+        <h1>Sistema Simulador de Locaciones Comerciales</h1>
+
+        <div id="divLocOStand">
+            <!--pregunta local o stand-->
+            <h3 id="p1">Está interesado en local o stand?</h3>
+            <input type="text" id="localOStand" placeholder="Ingrese su opción aquí">
+            <button onclick="funcionLocaciones()">Enviar</button>
+            <p id="Opcion1"></p>
+            <!--muestra locales disponibles-->
+            <p id="disponible1"></p>
+            <!--<button class="btn">Continuar</button>-->
+            <section class="container1"></section>
+        </div>
+
+        <div id="divLocOStand">
+            <!--pregunta metraje-->
+            <h3 id="p2">Ingrese metraje de local deseado para ver disponibilidad</h3>
+            <input type="text" id="consultaMetrosLocal" placeholder="Ingrese metraje">
+            <button onclick="funcionMetros()">Enviar</button>
+            <p id="Opcion2"></p>
+            <!--busqueda metrajes-->
+            <p id="disponible2"></p>
+            <!--<button class="btn">Continuar</button>
+            <section class="container"></section>-->
+        </div>
+
+        <div id="divCostoM2">
+            <!--metraje y años para costo-->
+            <h3 id="p2">Ingrese años de contrato para calcular costo de alquiler (máximo 3 años)</h3>
+            <input type="text" id="plazoContratoCalculo" placeholder="Ingrese plazo en años">
+            <button onclick="funcionPlazo()">Enviar</button>
+            <p id="Opcion3"></p>
+            <p id="Opcion4"></p>
+            <p id="Opcion5"></p>
+            <!--<button class="btn">Continuar</button>
+            <section class="container"></section>-->
+        </div>
+
+    </main>
+    <footer>
+         <!--links redes sociales-->
+         <div class="links">
+            <a href="http://www.facebook.com/deshoppings" target="_blank"><img src="images/facebook.png" alt="logo facebook"></a>
+            &nbsp;
+            <a href="http://www.instagram.com/deshoppings" target="_blank"><img src="images/instagram.jpg" alt="logo instagram"></a>
+            &nbsp;
+            <a href="http://www.linkedin.com/deshoppings" target="_blank"><img src="images/linkedin.png" alt="logo linkedin"></a>
+            &nbsp;
+            <a href="http://www.twitter.com/deshoppings" target="_blank"><img src="images/twitter.png" alt="logo twitter"></a>
+        </div> 
+
+        <!--copyright y mail de contacto-->
+        <div class="texto-footer">
+            <span>deShoppings.com.ar - Todos los derechos reservados 2022  - </span>
+            <span>Escribinos a <a href="mailto:contacto@deshoppings.com.ar">contacto@deshoppings.com.ar</a></span>
+        </div>
+    </footer>
+    
+    <script src="./scripts/jslocaciones.js"></script>
+</body>
+</html>
