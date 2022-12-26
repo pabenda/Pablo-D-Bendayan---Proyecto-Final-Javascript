@@ -1,6 +1,6 @@
 function funcionLocaciones() {
   let x = document.getElementById("localOStand").value;
-  document.getElementById("Opcion1").innerHTML = "Usted ingresó  " + x;
+  document.getElementById("mensaje1").innerHTML = "Usted ingresó  " + x;
 
   let localesDisponibles = [01, 03, 10, 22, 55, 102];
 
@@ -11,10 +11,14 @@ function funcionLocaciones() {
     console.log("opción local");
     document.getElementById("disponible1").innerText = "Los locales disponibles al día  " + HOY.toLocaleDateString() + " son   " + localesDisponibles;
 
-    /*document.querySelector(".btn").addEventListener("click", e => {
-      const newElement = document.createElement("input");
-      document.querySelector(".container1").appendChild(newElement);
-    });*/
+    document.querySelector(".botonContinuar1").addEventListener("click", e => {
+      /*const newElement = document.createElement("input");
+      document.querySelector(".container1").appendChild(newElement);*/
+      document.getElementById("localOStand").style.display = 'none';
+      document.getElementById("botonEnviar1").style.display = 'none';
+      document.getElementById("p1").style.display = 'none';
+      document.querySelector(".botonContinuar1").remove();
+    });
 
   } else {
     if (opcionElegida.toLowerCase() == "stand") {
@@ -26,9 +30,10 @@ function funcionLocaciones() {
   }
 }
 
+let valm2 = document.getElementById("consultaMetrosLocal").value;
 function funcionMetros() {
   let valm2 = document.getElementById("consultaMetrosLocal").value;
-  document.getElementById("Opcion2").innerHTML = "Usted ingresó  " + valm2 + "  metros";
+  document.getElementById("Opcion2").innerHTML = "Usted ingresó  " + valm2 + "  metros de superficie para el local";
 
   class LocalesD {
     constructor(numero, metros) {
@@ -55,10 +60,19 @@ function funcionMetros() {
     document.getElementById("disponible2").innerText = "--> No hay locales con ese metraje";
   }
 
+  document.querySelector(".botonContinuar2").addEventListener("click", e => {
+    /*const newElement = document.createElement("input");
+    document.querySelector(".container1").appendChild(newElement);*/
+    document.getElementById("p2").style.display = 'none';
+    document.getElementById("consultaMetrosLocal").style.display = 'none';
+    document.getElementById("botonEnviar2").style.display = 'none';
+    document.querySelector(".botonContinuar2").remove();
+  });
+
 }
 
 function funcionPlazo() {
-  let valm2 = document.getElementById("consultaMetrosLocal").value;
+  let valM2 = document.getElementById("consultaMetrosLocal").value;
   document.getElementById("Opcion2").innerHTML = "Usted ingresó  " + valm2 + "  metros";
 
   let costoM2 = 2000;
@@ -68,12 +82,23 @@ function funcionPlazo() {
   }
 
   let m2Solicitados = document.getElementById("consultaMetrosLocal").value;
+  document.getElementById("disponible3").innerHTML = "Usted ingreso que pretende  " + document.getElementById("plazoContratoCalculo").value + "  años de contrato de locación"
   let plazoContrato = document.getElementById("plazoContratoCalculo").value;
 
   for (let indexLocal = 1; indexLocal <= plazoContrato; indexLocal++) {
     console.log("El costo anual por alquiler del año " + indexLocal.toString() + " es de pesos " + (costoM2 * m2Solicitados * 12).toString());
     costoM2 = AJUSTAR(costoM2, ajusteAnual);
   }
+
+  document.querySelector(".botonContinuar3").addEventListener("click", e => {
+    /*const newElement = document.createElement("input");
+    document.querySelector(".container1").appendChild(newElement);*/
+    document.getElementById("p3").style.display = 'none';
+    document.getElementById("plazoContratoCalculo").style.display = 'none';
+    document.getElementById("botonEnviar3").style.display = 'none';
+    document.querySelector(".botonContinuar3").remove();
+  });
+
 }
 
 

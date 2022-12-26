@@ -20,36 +20,32 @@
             <!--pregunta local o stand-->
             <h3 id="p1">Está interesado en local o stand?</h3>
             <input type="text" id="localOStand" placeholder="Ingrese su opción aquí">
-            <button onclick="funcionLocaciones()">Enviar</button>
-            <p id="Opcion1"></p>
+            <button id="botonEnviar1" onclick="funcionLocaciones()">Enviar</button>
+            <p id="mensaje1"></p>
             <!--muestra locales disponibles-->
             <p id="disponible1"></p>
-            <!--<button class="btn">Continuar</button>-->
-            <section class="container1"></section>
+            <button class="botonContinuar1">Continuar a metraje de local deseado</button>
         </div>
 
         <div id="divLocOStand">
             <!--pregunta metraje-->
             <h3 id="p2">Ingrese metraje de local deseado para ver disponibilidad</h3>
             <input type="text" id="consultaMetrosLocal" placeholder="Ingrese metraje">
-            <button onclick="funcionMetros()">Enviar</button>
+            <button id="botonEnviar2" onclick="funcionMetros()">Enviar</button>
             <p id="Opcion2"></p>
             <!--busqueda metrajes-->
             <p id="disponible2"></p>
-            <!--<button class="btn">Continuar</button>
-            <section class="container"></section>-->
+            <button class="botonContinuar2">Continuar a años de contrato</button>
         </div>
 
         <div id="divCostoM2">
             <!--metraje y años para costo-->
-            <h3 id="p2">Ingrese años de contrato para calcular costo de alquiler (máximo 3 años)</h3>
+            <h3 id="p3">Ingrese años de contrato para calcular costo de alquiler (máximo 3 años)</h3>
             <input type="text" id="plazoContratoCalculo" placeholder="Ingrese plazo en años">
-            <button onclick="funcionPlazo()">Enviar</button>
-            <p id="Opcion3"></p>
-            <p id="Opcion4"></p>
-            <p id="Opcion5"></p>
-            <!--<button class="btn">Continuar</button>
-            <section class="container"></section>-->
+            <button id="botonEnviar3" onclick="funcionPlazo()">Enviar</button>
+            <p id="disponible3"></p>
+            <button class="botonContinuar3">Continuar</button>
+            <section class="container"></section>
         </div>
 
     </main>
