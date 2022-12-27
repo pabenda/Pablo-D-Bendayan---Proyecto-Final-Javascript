@@ -110,15 +110,11 @@ function genera_tabla() {
 
   let costoM2 = 2000;
 
-    for (let i = 0; i < plazo; i++) {
-      alquileres[i] = {anio: i+1, alquiler: costoM2*metros*plazo};
-      let ajusteAnual = 1.5;
-      function AJUSTAR(num1, num2) {
-        return parseInt(num1) * parseInt(num2);
-      }
-      costoM2 = AJUSTAR(costoM2, ajusteAnual)
-    }
-  console.log(alquileres);
+  for (let i = 0; i < plazo; i++) {
+    alquileres[i] = { anio: i + 1, alquiler: costoM2 * metros * plazo };
+    let ajusteAnual = 1.5;
+    costoM2 = costoM2 * ajusteAnual;
+  }
 
   let tablaAlquileres = document.getElementById("alquilerT");
   let cuerpoTabla = document.createElement("tbody");
@@ -140,4 +136,4 @@ function genera_tabla() {
   tablaAlquileres.appendChild(cuerpoTabla);
 }
 
- 
+
