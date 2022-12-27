@@ -33,7 +33,7 @@ function funcionLocaciones() {
 let valm2 = document.getElementById("consultaMetrosLocal").value;
 function funcionMetros() {
   let valm2 = document.getElementById("consultaMetrosLocal").value;
-  document.getElementById("Opcion2").innerHTML = "Usted ingresó  " + valm2 + "  metros de superficie para el local";
+  document.getElementById("Opcion2").innerHTML = "Usted ingresó  " + valm2.toString() + "  metros de superficie para el local";
 
   class LocalesD {
     constructor(numero, metros) {
@@ -86,7 +86,7 @@ function funcionPlazo() {
   let plazoContrato = document.getElementById("plazoContratoCalculo").value;
 
   for (let indexLocal = 1; indexLocal <= plazoContrato; indexLocal++) {
-    console.log("El costo anual por alquiler del año " + indexLocal.toString() + " es de pesos " + (costoM2 * m2Solicitados * 12).toString());
+    /*console.log("El costo anual por alquiler del año " + indexLocal.toString() + " es de pesos " + (costoM2 * m2Solicitados * 12).toString());*/
     costoM2 = AJUSTAR(costoM2, ajusteAnual);
   }
 
@@ -101,4 +101,43 @@ function funcionPlazo() {
 
 }
 
+function genera_tabla() {
 
+  let metros = parseInt(document.getElementById("consultaMetrosLocal").value);
+  let plazo = parseInt(document.getElementById("plazoContratoCalculo").value);
+
+  let alquileres = new Array(document.getElementById("plazoContratoCalculo").value)
+
+  let costoM2 = 2000;
+
+    for (let i = 0; i < plazo; i++) {
+      alquileres[i] = {anio: i+1, alquiler: costoM2*metros*plazo};
+      let ajusteAnual = 1.5;
+      function AJUSTAR(num1, num2) {
+        return parseInt(num1) * parseInt(num2);
+      }
+      costoM2 = AJUSTAR(costoM2, ajusteAnual)
+    }
+  console.log(alquileres);
+
+  let tablaAlquileres = document.getElementById("alquilerT");
+  let cuerpoTabla = document.createElement("tbody");
+
+  alquileres.forEach(p => {
+    let fila = document.createElement("tr");
+
+    let td = document.createElement("td");
+    td.innerText = p.anio;
+    fila.appendChild(td);
+
+    td = document.createElement("td")
+    td.innerText = p.alquiler;
+    fila.appendChild(td);
+
+    cuerpoTabla.appendChild(fila)
+  })
+
+  tablaAlquileres.appendChild(cuerpoTabla);
+}
+
+ 

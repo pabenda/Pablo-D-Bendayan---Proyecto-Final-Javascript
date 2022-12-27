@@ -30,7 +30,7 @@
         <div id="divLocOStand">
             <!--pregunta metraje-->
             <h3 id="p2">Ingrese metraje de local deseado para ver disponibilidad</h3>
-            <input type="text" id="consultaMetrosLocal" placeholder="Ingrese metraje">
+            <input type="number" id="consultaMetrosLocal" placeholder="Ingrese metraje">
             <button id="botonEnviar2" onclick="funcionMetros()">Enviar</button>
             <p id="Opcion2"></p>
             <!--busqueda metrajes-->
@@ -41,12 +41,20 @@
         <div id="divCostoM2">
             <!--metraje y años para costo-->
             <h3 id="p3">Ingrese años de contrato para calcular costo de alquiler (máximo 3 años)</h3>
-            <input type="text" id="plazoContratoCalculo" placeholder="Ingrese plazo en años">
+            <input type="number" id="plazoContratoCalculo" placeholder="Ingrese plazo en años">
             <button id="botonEnviar3" onclick="funcionPlazo()">Enviar</button>
             <p id="disponible3"></p>
             <button class="botonContinuar3">Continuar</button>
+            <input type="button" value="Genera una tabla con los valores del contrato" onclick="genera_tabla()">
             <section class="container"></section>
         </div>
+
+        <table id="alquilerT" border="2">
+            <tr>
+                <th>Período Anual</th>
+                <th>Alquiler Anual</th>
+            </tr>
+        </table>
 
     </main>
     <footer>
