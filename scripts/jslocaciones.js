@@ -156,6 +156,28 @@ function genera_tabla() {
   swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
 }
 
+const eventoFuturo = (flag) => {
+  return new Promise((resolve, reject) => {
+    // dentro del cuerpo determinan si se resuelve o se rechaza
+    setTimeout(() => {
+      if (flag === true) {
+        resolve("promesa resuelta");
+      } else {
+        reject("promesa rechazada");
+      }
+    }, 3000);
+  })
+}
 
+eventoFuturo(true).then((response) => {
+  console.log(response);
+});
 
+eventoFuturo(false).catch((error) => {
+  console.error(error);
+});
+
+eventoFuturo(false).finally(() => {
+  console.log("Proceso de búsqueda terminado");
+});
 
