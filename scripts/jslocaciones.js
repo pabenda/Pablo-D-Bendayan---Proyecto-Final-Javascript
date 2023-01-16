@@ -156,6 +156,8 @@ function genera_tabla() {
   swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
 }
 
+
+/*ESTRUCTURA DE PROMESAS
 const eventoFuturo = (flag) => {
   return new Promise((resolve, reject) => {
     // dentro del cuerpo determinan si se resuelve o se rechaza
@@ -180,4 +182,29 @@ eventoFuturo(false).catch((error) => {
 eventoFuturo(false).finally(() => {
   console.log("Proceso de búsqueda terminado");
 });
+*/
 
+let DB = [
+  { id: 1, name: "producto 1", price: 1000},
+{ id: 2, name: "producto 2", price: 2000},
+{ id: 3, name: "producto 3", price: 3000},
+{ id: 4, name: "producto 4", price: 4000},
+]
+
+const pedirProducto = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(DB);
+    }, 3000);
+  })
+}
+
+let productos = [];
+
+pedirProducto()
+  .then((response) => {
+    productos = response;
+  })
+  .finally(() => {
+    console.log("Datos cargados a la base");
+  })
