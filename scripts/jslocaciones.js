@@ -7,10 +7,12 @@ function funcionLocaciones() {
       duration: 2000,
       position: 'left',
       gravity: 'top',
-          }).showToast();
-   });
+    }).showToast();
+  });
+
   document.getElementById("mensaje1").innerHTML = "Usted ingresó  " + x;
-  
+
+
   let localesDisponibles = [01, 03, 10, 22, 55, 102];
 
   let opcionElegida = document.getElementById("localOStand").value;
@@ -18,7 +20,10 @@ function funcionLocaciones() {
 
   if (opcionElegida.toLowerCase() == "local") {
     console.log("opción local");
-    document.getElementById("disponible1").innerText = "Los locales disponibles al día  " + HOY.toLocaleDateString() + " son   " + localesDisponibles;
+
+    setTimeout(() => {
+      document.getElementById("disponible1").innerText = "Los locales disponibles al día  " + HOY.toLocaleDateString() + " son   " + localesDisponibles;
+    }, 2000);
 
     document.querySelector(".botonContinuar1").addEventListener("click", e => {
       /*const newElement = document.createElement("input");
