@@ -1,7 +1,16 @@
 function funcionLocaciones() {
   let x = document.getElementById("localOStand").value;
+  let btnLocales = document.getElementById("botonEnviar1");
+  btnLocales.addEventListener('click', () => {
+    Toastify({
+      text: "Enviado",
+      duration: 2000,
+      position: 'left',
+      gravity: 'top',
+          }).showToast();
+   });
   document.getElementById("mensaje1").innerHTML = "Usted ingresó  " + x;
-
+  
   let localesDisponibles = [01, 03, 10, 22, 55, 102];
 
   let opcionElegida = document.getElementById("localOStand").value;
