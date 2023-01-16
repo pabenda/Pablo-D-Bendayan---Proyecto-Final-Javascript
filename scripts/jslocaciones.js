@@ -70,9 +70,13 @@ function funcionMetros() {
     return unLocal.metros.includes(valm2);
   });
   if (isExist) {
-    document.getElementById("disponible2").innerText = "--> Existe al menos un local con ese metraje!";
+    setTimeout(() => {
+      document.getElementById("disponible2").innerText = "--> Existe al menos un local con ese metraje!";
+    }, 2000);
   } else {
-    document.getElementById("disponible2").innerText = "--> No hay locales con ese metraje";
+    setTimeout(() => {
+      document.getElementById("disponible2").innerText = "--> No hay locales con ese metraje";
+    }, 2000);
   }
 
   document.querySelector(".botonContinuar2").addEventListener("click", e => {
