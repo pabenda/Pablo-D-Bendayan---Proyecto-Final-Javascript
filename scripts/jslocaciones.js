@@ -21,12 +21,13 @@ function funcionLocaciones() {
     });
 
   } else {
-    if (opcionElegida.toLowerCase() == "stand") {
+    /*if (opcionElegida.toLowerCase() == "stand") {
       console.log("opción stand");
       document.getElementById("disponible1").innerText = "No hay stands disponibles. Gracias por visitar nuestra web!";
     } else {
       document.getElementById("disponible1").innerText = "No ingresó una respuesta válida";
-    }
+    }*/
+    opcionElegida.toLowerCase() == "stand" ? document.getElementById("disponible1").innerText = "No hay stands disponibles. Gracias por visitar nuestra web!" : document.getElementById("disponible1").innerText = "No ingresó una respuesta válida";
   }
 }
 
