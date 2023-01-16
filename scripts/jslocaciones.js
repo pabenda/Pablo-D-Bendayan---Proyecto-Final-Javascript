@@ -135,6 +135,9 @@ function genera_tabla() {
   })
 
   tablaAlquileres.appendChild(cuerpoTabla);
+  swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
 }
+
+
 
 
