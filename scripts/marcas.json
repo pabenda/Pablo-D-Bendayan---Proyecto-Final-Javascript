@@ -1,0 +1,9 @@
+
+[
+    { "marca": "Nike", "rubro": "Calzado", "mail": "contacto@nike.com", "pais": "Uruguay" },
+    { "marca": "H&M", "rubro": "Indumentaria", "mail": "mail@hym.com", "pais": "Estados Unidos" },
+    { "marca": "Cheeky", "rubro": "Indumentaria", "mail": "info@cheeky.com.ar", "pais": "Argentina" },
+    { "marca": "Crocs", "rubro": "Calzado", "mail": "contacto@crocs.com.ar", "pais": "Argentina" },
+    { "marca": "Mostaza", "rubro": "Gastronomía", "mail": "comercial@mostaza.com", "pais": "Argentina" }
+]
+

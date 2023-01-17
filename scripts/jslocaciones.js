@@ -6,12 +6,10 @@ let showSearchingPosts = document.getElementById("showSearchingPosts");
 function renderUserDetail(user) {
   let productDetail = document.getElementById("usersTableBody");
   let record = document.createElement("tr");
-  record.innerHTML = `<td>${user.name}</td>
-      <td><a href="mailto:${user.email}?Subject=Lo%20contactamos%20para%20ofrecerle%20un%20curso">${user.email}</a></td>
-      <td>${user.username}</td>
-      <td>
-      <a href="${user.website}" target="_blank">${user.website}</a>
-      </td>`;
+  record.innerHTML = `<td>${user.marca}</td>
+      <td>${user.rubro}</td>
+      <td>${user.mail}</td>
+      <td>${user.pais}</td>`;
   productDetail.appendChild(record);
 }
 
@@ -23,7 +21,7 @@ function renderUsersTableDetails(users = []) {
   });
 }
 
-fetch("https://jsonplaceholder.typicode.com/users")
+fetch('/scripts/marcas.json')
   .then((response) => response.json())
   .then((json) => {
     console.log(json);
