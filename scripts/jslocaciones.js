@@ -210,61 +210,17 @@ function genera_tabla() {
   })
 
   tablaAlquileres.appendChild(cuerpoTabla);
+
   setTimeout(() => {
     swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
   }, 3000);
 
 }
 
-
-/*ESTRUCTURA DE PROMESAS
-const eventoFuturo = (flag) => {
-  return new Promise((resolve, reject) => {
-    // dentro del cuerpo determinan si se resuelve o se rechaza
-    setTimeout(() => {
-      if (flag === true) {
-        resolve("promesa resuelta");
-      } else {
-        reject("promesa rechazada");
-      }
-    }, 3000);
-  })
-}
-
-eventoFuturo(true).then((response) => {
-  console.log(response);
-});
-
-eventoFuturo(false).catch((error) => {
-  console.error(error);
-});
-
-eventoFuturo(false).finally(() => {
-  console.log("Proceso de búsqueda terminado");
-});
-*/
-
-let DB = [
-  { id: 1, name: "producto 1", price: 1000 },
-  { id: 2, name: "producto 2", price: 2000 },
-  { id: 3, name: "producto 3", price: 3000 },
-  { id: 4, name: "producto 4", price: 4000 },
-]
-
-const pedirProducto = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(DB);
-    }, 3000);
-  })
-}
-
-let productos = [];
-
-pedirProducto()
-  .then((response) => {
-    productos = response;
-  })
-  .finally(() => {
-    console.log("Datos cargados a la base");
-  })
+const cargarDatos = async () => {
+  const url = "./scripts/normas.json";
+  const res = await fetch(url);
+  const datos = await res.json();
+  console.log(datos);
+};
+cargarDatos();
