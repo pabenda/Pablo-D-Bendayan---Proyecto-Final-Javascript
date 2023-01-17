@@ -1,8 +1,5 @@
-let showSearchingUsers = document.getElementById("showSearchingUsers");
-let showSearchingPosts = document.getElementById("showSearchingPosts");
-//showSearchingUsers.style.display = "block";
+let showSearchingBrands = document.getElementById("showSearchingBrands");
 
-// Sección para consultar Usuarios
 function renderUserDetail(user) {
   let productDetail = document.getElementById("usersTableBody");
   let record = document.createElement("tr");
@@ -17,7 +14,9 @@ function renderUsersTableDetails(users = []) {
   let usersTableBody = document.getElementById("usersTableBody");
   usersTableBody.innerHTML = "";
   users.forEach((element) => {
-    renderUserDetail(element);
+    setTimeout(() => {
+      renderUserDetail(element);
+    }, 2000);
   });
 }
 
@@ -25,11 +24,11 @@ fetch('/scripts/marcas.json')
   .then((response) => response.json())
   .then((json) => {
     console.log(json);
-    showSearchingUsers.style.display = "block";
+    showSearchingBrands.style.display = "block";
 
     renderUsersTableDetails(json);
 
-    showSearchingUsers.style.display = "none";
+    showSearchingBrands.style.display = "none";
   });
 
 
@@ -61,8 +60,6 @@ function funcionLocaciones() {
     }, 2000);
 
     document.querySelector(".botonContinuar1").addEventListener("click", e => {
-      /*const newElement = document.createElement("input");
-      document.querySelector(".container1").appendChild(newElement);*/
       document.getElementById("localOStand").style.display = 'none';
       document.getElementById("botonEnviar1").style.display = 'none';
       document.getElementById("p1").style.display = 'none';
@@ -70,12 +67,6 @@ function funcionLocaciones() {
     });
 
   } else {
-    /*if (opcionElegida.toLowerCase() == "stand") {
-      console.log("opción stand");
-      document.getElementById("disponible1").innerText = "No hay stands disponibles. Gracias por visitar nuestra web!";
-    } else {
-      document.getElementById("disponible1").innerText = "No ingresó una respuesta válida";
-    }*/
     opcionElegida.toLowerCase() == "stand" ? document.getElementById("disponible1").innerText = "No hay stands disponibles. Gracias por visitar nuestra web!" : document.getElementById("disponible1").innerText = "No ingresó una respuesta válida";
   }
 }
@@ -115,8 +106,6 @@ function funcionMetros() {
   }
 
   document.querySelector(".botonContinuar2").addEventListener("click", e => {
-    /*const newElement = document.createElement("input");
-    document.querySelector(".container1").appendChild(newElement);*/
     document.getElementById("p2").style.display = 'none';
     document.getElementById("consultaMetrosLocal").style.display = 'none';
     document.getElementById("botonEnviar2").style.display = 'none';
@@ -140,13 +129,10 @@ function funcionPlazo() {
   let plazoContrato = document.getElementById("plazoContratoCalculo").value;
 
   for (let indexLocal = 1; indexLocal <= plazoContrato; indexLocal++) {
-    /*console.log("El costo anual por alquiler del año " + indexLocal.toString() + " es de pesos " + (costoM2 * m2Solicitados * 12).toString());*/
     costoM2 = AJUSTAR(costoM2, ajusteAnual);
   }
 
   document.querySelector(".botonContinuar3").addEventListener("click", e => {
-    /*const newElement = document.createElement("input");
-    document.querySelector(".container1").appendChild(newElement);*/
     document.getElementById("p3").style.display = 'none';
     document.getElementById("plazoContratoCalculo").style.display = 'none';
     document.getElementById("botonEnviar3").style.display = 'none';
@@ -220,10 +206,10 @@ eventoFuturo(false).finally(() => {
 */
 
 let DB = [
-  { id: 1, name: "producto 1", price: 1000},
-{ id: 2, name: "producto 2", price: 2000},
-{ id: 3, name: "producto 3", price: 3000},
-{ id: 4, name: "producto 4", price: 4000},
+  { id: 1, name: "producto 1", price: 1000 },
+  { id: 2, name: "producto 2", price: 2000 },
+  { id: 3, name: "producto 3", price: 3000 },
+  { id: 4, name: "producto 4", price: 4000 },
 ]
 
 const pedirProducto = () => {

@@ -100,9 +100,8 @@ function renderRowDetail(unProducto, quantity) {
     <td>${quantity}</td>
     <td>${unProducto.price * quantity}</td>
     <td>
-      <button onclick="removeOrder(${
-        unProducto.id
-      })" type="button" class="btn btn-danger">Remover</button>
+      <button onclick="removeOrder(${unProducto.id
+    })" type="button" class="btn btn-danger">Remover</button>
     </td>`;
   productDetail.appendChild(record);
 }
