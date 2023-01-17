@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./images/favicon.png">
 </head>
+
 <body>
     <header>
         <!--Logo con link-->
@@ -15,6 +17,40 @@
     </header>
     <main>
         <h1>Simulador de Locaciones Comerciales</h1>
+
+        <div class="container">
+            <h3>Listado de Usuarios recuperados</h3>
+
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary">Consultar</button>
+                </div>
+            </div>
+
+            <button id="showSearchingUsers" style="display: none" class="btn btn-primary mt-2" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="false"></span>
+                Recuperando datos...
+            </button>
+
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo electrónico</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Sitio</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div id="divLocOStand">
             <!--pregunta local o stand-->
@@ -58,26 +94,31 @@
 
     </main>
     <footer>
-         <!--links redes sociales-->
-         <div class="links">
-            <a href="http://www.facebook.com/deshoppings" target="_blank"><img src="images/facebook.png" alt="logo facebook"></a>
+        <!--links redes sociales-->
+        <div class="links">
+            <a href="http://www.facebook.com/deshoppings" target="_blank"><img src="images/facebook.png"
+                    alt="logo facebook"></a>
             &nbsp;
-            <a href="http://www.instagram.com/deshoppings" target="_blank"><img src="images/instagram.jpg" alt="logo instagram"></a>
+            <a href="http://www.instagram.com/deshoppings" target="_blank"><img src="images/instagram.jpg"
+                    alt="logo instagram"></a>
             &nbsp;
-            <a href="http://www.linkedin.com/deshoppings" target="_blank"><img src="images/linkedin.png" alt="logo linkedin"></a>
+            <a href="http://www.linkedin.com/deshoppings" target="_blank"><img src="images/linkedin.png"
+                    alt="logo linkedin"></a>
             &nbsp;
-            <a href="http://www.twitter.com/deshoppings" target="_blank"><img src="images/twitter.png" alt="logo twitter"></a>
-        </div> 
+            <a href="http://www.twitter.com/deshoppings" target="_blank"><img src="images/twitter.png"
+                    alt="logo twitter"></a>
+        </div>
 
         <!--copyright y mail de contacto-->
         <div class="texto-footer">
-            <span>deShoppings.com.ar - Todos los derechos reservados 2022  - </span>
+            <span>deShoppings.com.ar - Todos los derechos reservados 2022 - </span>
             <span>Escribinos a <a href="mailto:contacto@deshoppings.com.ar">contacto@deshoppings.com.ar</a></span>
         </div>
     </footer>
-    
+
     <script src="./scripts/jslocaciones.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>
