@@ -99,10 +99,46 @@ function funcionMetros() {
     setTimeout(() => {
       document.getElementById("disponible2").innerText = "--> Existe al menos un local con ese metraje!";
     }, 2000);
+
+    let flag = true;
+    const localDisponible = (flag) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (flag === true) {
+            resolve("promesa resuelta");
+          } else {
+            reject("promesa rechazada");
+          }
+        }, 3000);
+      })
+    }
+
+    localDisponible(true).then((response) => {
+      console.log(response);
+    });
+
   } else {
     setTimeout(() => {
       document.getElementById("disponible2").innerText = "--> No hay locales con ese metraje";
     }, 2000);
+
+    let flag = false;
+    const localDisponible = (flag) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (flag === true) {
+            resolve("promesa resuelta");
+          } else {
+            reject("promesa rechazada");
+          }
+        }, 3000);
+      })
+    }
+
+    localDisponible(false).catch((response) => {
+      console.error(response);
+    });
+
   }
 
   document.querySelector(".botonContinuar2").addEventListener("click", e => {
@@ -174,7 +210,10 @@ function genera_tabla() {
   })
 
   tablaAlquileres.appendChild(cuerpoTabla);
-  swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
+  setTimeout(() => {
+    swal("Gracias por su visita!", "Para más info contactar comercial@deshoppings.com.ar", "success");
+  }, 3000);
+
 }
 
 
